@@ -2,7 +2,11 @@ Description [This is a WIP]
 ---------------------------
 
 
-This command line utility allow you to optimize images using the MiniMagic gem.
+This command line utility allow you to optimize images using the MiniMagic gem. The script read a json file with an specific format
+(described) bellow, download the images and optimize them based on the values of the flags you use.
+
+The structure of the file wasn't a personal decision, it was just to avoid extra worl while doing a optimization process inside
+the compnay I work on.
 
 
 Getting starting
