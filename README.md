@@ -52,3 +52,6 @@ These are available flags for the command:
 --resource-info        | path to the json path to read images locations
 --kind-of-image        | key inside the `mainImage` key (json file)
 --skip-download        | If you already download the images described inside the json file, skip download to save time
+--width                | width to resize image
+--height               | height to resize image
+--quality              | quality to resize image
