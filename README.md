@@ -14,6 +14,12 @@ Getting starting
 
 * Make sure the `optimized_images` and `original_images` exists.
 
+You can use the script with and without a JSON config file.
+
+Using a JSON config file
+========================
+
+
 * Create a json file with the following structure:
 
 ```js
@@ -53,6 +59,12 @@ Hints
 
 * `--kind-of-image` value could be any value you put inside the `mainImage` key.
 * You have to run the script inside the folder of the project.
+
+Without config JSON file
+========================
+
+You can run the script without a config json file. What the script is going to do is optimize the images inside the `original_images`
+folder and output the new images in the `optimize_images` folder. Only options related with image optimization are going to be used.
 
 
 Available command flags

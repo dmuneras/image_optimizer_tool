@@ -29,7 +29,11 @@ class ImageOptimizer
       options = options.to_h.delete_if { |_, value| value.nil? }
       options = default_options.merge(options)
       @options = options
-      @resources_info = JSON.parse(open(options[:resources_info]).read)
+      if options[:resources_info]
+        @resources_info = JSON.parse(open(options[:resources_info]).read)
+      else
+        @resources_info = nil
+      end
     end
   end
 
@@ -47,11 +51,26 @@ class ImageOptimizer
   end
 
   def images_info
-    @images_info = @resources_info.map do |resource|
-                    image_src = resource['mainImage'][@options[:kind_of_image]]
-                    image_name = image_src.split('/').last
-                    { name: image_name, src: image_src }
-                  end
+    @images_info =
+      if @resources_info
+        send(:images_info_by_json_file)
+      else
+        send(:images_info_by_folder)
+      end
+  end
+
+  def images_info_by_folder
+    Dir["#{Dir.pwd}/original_images/*"].map do |image_src|
+      { name: image_src.split('/').last, src: image_src }
+    end
+  end
+
+  def images_info_by_json_file
+    @resources_info.map do |resource|
+      image_src = resource['mainImage'][@options[:kind_of_image]]
+      image_name = image_src.split('/').last
+      { name: image_name, src: image_src }
+    end
   end
 
   def optimize
@@ -77,6 +96,7 @@ class ImageOptimizer
   end
 
   def download_requested_images
+    return unless @resources_info
     images_info.each do |image_info|
       image = open(image_info[:src]) do |image|
         File.open("./original_images/#{image_info[:name]}", 'wb') do |local_image|
