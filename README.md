@@ -84,3 +84,4 @@ These are available flags for the command:
 --width           | -w           | width to resize image
 --height          | -h           | height to resize image
 --quality         | -q           | quality to resize image
+--extension       | -e           | extension of the resized image

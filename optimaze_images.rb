@@ -8,6 +8,7 @@ opts = Slop.parse do |o|
   o.string '-w', '--width', 'width to resize'
   o.string '-h', '--height', 'height to resize'
   o.string '-q', '--quality', 'quality of image to resize'
+  o.string '-e', '--extension', 'extension of the output image'
   o.bool '-sd', '--skip-download', 'skip download process'
   o.on '--version', 'print the version' do
     puts Slop::VERSION
