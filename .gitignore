@@ -1,3 +1,4 @@
 optimized_images/*
 original_images/*
 *.json
+.DS_Store
