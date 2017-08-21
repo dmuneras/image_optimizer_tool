@@ -68,6 +68,8 @@ Without config JSON file
 You can run the script without a config json file. What the script is going to do is optimize the images inside the `original_images`
 folder and output the new images in the `optimize_images` folder. Only options related with image optimization are going to be used.
 
+Ex. `ruby optimaze_images.rb -q 80`
+
 
 Available command flags
 ------------------------
