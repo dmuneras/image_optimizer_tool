@@ -46,7 +46,13 @@ that you pass the right option to the command line utility.
 
 `ruby optimaze_images.rb --resources-info <path-to-json-file-with-image-locations> --kind-of-image  <original|hero|box|card>`
 
-NOTE: `--kind-of-image` value could be any value you put inside the `mainImage` key.
+
+HINTS
+------
+
+
+* `--kind-of-image` value could be any value you put inside the `mainImage` key.
+* You have to run the script inside the folder of the project.
 
 
 These are available flags for the command:
