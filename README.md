@@ -76,11 +76,11 @@ Available command flags
 
 These are available flags for the command:
 
-**flag**                   | **description**
----                        | --------------------               |
---resource-info  (-ri)     | path to the json path to read images locations
---kind-of-image  ( -ki)    | key inside the `mainImage` key (json file)
---skip-download  (-sd)     | If you already download the images described inside the json file, skip download to save time
---width          (-w)      | width to resize image
---height         (-h)      | height to resize image
---quality        (-q)      | quality to resize image
+**flag**          | **shortcut** | **description**
+----------------- |-----------   | --------------------
+--resource-info   | -ri          | path to the json path to read images locations
+--kind-of-image   | -ki          | key inside the `mainImage` key (json file)
+--skip-download   | -sd          | If you already download the images described inside the json file, skip download to save time
+--width           | -w           | width to resize image
+--height          | -h           | height to resize image
+--quality         | -q           | quality to resize image
