@@ -47,7 +47,7 @@ that you pass the right option to the command line utility.
 `ruby optimaze_images.rb --resources-info <path-to-json-file-with-image-locations> --kind-of-image  <original|hero|box|card>`
 
 
-HINTS
+Hints
 ------
 
 
@@ -55,13 +55,16 @@ HINTS
 * You have to run the script inside the folder of the project.
 
 
+Available command flags
+------------------------
+
 These are available flags for the command:
 
-**flag**             | **description**
----                    | ---                 |
---resource-info        | path to the json path to read images locations
---kind-of-image        | key inside the `mainImage` key (json file)
---skip-download        | If you already download the images described inside the json file, skip download to save time
---width                | width to resize image
---height               | height to resize image
---quality              | quality to resize image
+**flag**                   | **description**
+---                        | --------------------               |
+--resource-info  (-ri)     | path to the json path to read images locations
+--kind-of-image  ( -ki)    | key inside the `mainImage` key (json file)
+--skip-download  (-sd)     | If you already download the images described inside the json file, skip download to save time
+--width          (-w)      | width to resize image
+--height         (-h)      | height to resize image
+--quality        (-q)      | quality to resize image
