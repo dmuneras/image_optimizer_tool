@@ -5,8 +5,50 @@ Description [This is a WIP]
 This command line utility allow you to optimize images using the MiniMagic gem.
 
 
-
 Getting starting
 ----------------
 
-* Make sure the `optimized_images` and `original_images`
+* Make sure the `optimized_images` and `original_images` exists.
+
+* Create a json file with the following structure:
+
+```js
+
+  [
+    {
+      "mainImage": {
+      "original": <image-path>,
+      "hero": <image-path>,
+      "box": <image-path>,
+      "card": <image-path>
+      }
+    },
+    {
+      "mainImage": {
+      "original": <image-path>,
+      "hero": <image-path>,
+      "box": <image-path>,
+      "card": <image-path>
+      }
+    }
+  ]
+
+```
+
+The `original`, `box`, `hero` and `card` keys inside the `mainImage` key can be the keys you want, you only have to ensure
+that you pass the right option to the command line utility.
+
+* After creating the json file you just have to run the command line utility with the right options:
+
+`ruby optimaze_images.rb --resources-info <path-to-json-file-with-image-locations> --kind-of-image  <original|hero|box|card>`
+
+NOTE: `--kind-of-image` value could be any value you put inside the `mainImage` key.
+
+
+These are available flags for the command:
+
+**flag**             | **description**
+---                    | ---                 |
+--resource-info        | path to the json path to read images locations
+--kind-of-image        | key inside the `mainImage` key (json file)
+--skip-download        | If you already download the images described inside the json file, skip download to save time
